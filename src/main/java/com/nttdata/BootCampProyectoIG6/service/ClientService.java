@@ -5,7 +5,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface ClientService {
-    Mono<Void> createCli(Client c);
+    Mono<Client> createCli(Client c);
     Mono<Client> findByCliId(Integer id);
     Flux<Client> findAllCli();
     Mono<Client> updateCli(Client c);
