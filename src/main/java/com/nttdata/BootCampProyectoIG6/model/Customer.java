@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
@@ -11,9 +12,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @Builder
 @Document
-public class Client {
-    int id;
-    String name;
-    String document;
-    String type;
+public class Customer {
+    private String id;
+    private String name;
+    private String docType;
+    private String docNumber;
+    private CustomerType customerType;
 }

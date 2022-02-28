@@ -11,11 +11,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class BootCampProyectoIg6Application implements ApplicationRunner {
 
-	private static final Logger logger = LogManager.getLogger(BootCampProyectoIg6Application.class);
 	public static void main(String[] args) {
 		SpringApplication.run(BootCampProyectoIg6Application.class, args);
 	}
-
+	private static final Logger logger = LogManager.getLogger(BootCampProyectoIg6Application.class);
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		logger.debug("Debug de la aplicación");
