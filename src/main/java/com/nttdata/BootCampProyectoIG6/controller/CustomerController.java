@@ -3,6 +3,7 @@ package com.nttdata.BootCampProyectoIG6.controller;
 import com.nttdata.BootCampProyectoIG6.model.Customer;
 import com.nttdata.BootCampProyectoIG6.model.CustomerType;
 import com.nttdata.BootCampProyectoIG6.service.CustomerService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -15,14 +16,15 @@ import javax.ws.rs.PathParam;
 
 @RestController
 @RequestMapping("/customer")
+@RequiredArgsConstructor
 public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
-    public void createCust(@RequestBody Customer customer){
-        customerService.createCust(customer);
+    public Mono<Customer> createCust(@RequestBody Customer customer){
+        return customerService.createCust(customer);
     }
 
     @GetMapping(value = "/getAll", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
@@ -51,9 +53,4 @@ public class CustomerController {
         return customerService.deleteCust(id);
     }
 
-    @GetMapping("/")
-    @ResponseStatus
-    public Flux<Customer> findByType(@PathParam("type") CustomerType type) {
-        return customerService.findByCustomerType(type);
-    }
 }

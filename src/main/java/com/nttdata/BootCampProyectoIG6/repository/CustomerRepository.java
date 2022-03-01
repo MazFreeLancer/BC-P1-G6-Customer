@@ -8,5 +8,5 @@ import reactor.core.publisher.Flux;
 
 @Repository
 public interface CustomerRepository extends ReactiveMongoRepository<Customer, String> {
-    Flux<Customer> findByCustomerType(CustomerType type);
+
 }

@@ -11,6 +11,4 @@ public interface CustomerService {
     Flux<Customer> findAllCust();
     Mono<Customer> updateCust(Customer c);
     Mono<Void> deleteCust(String id);
-
-    Flux<Customer> findByCustomerType(CustomerType type);
 }
