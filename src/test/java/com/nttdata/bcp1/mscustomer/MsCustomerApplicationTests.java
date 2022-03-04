@@ -1,10 +1,10 @@
-package com.nttdata.BootCampProyectoIG6;
+package com.nttdata.bcp1.mscustomer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BootCampProyectoIg6ApplicationTests {
+class MsCustomerApplicationTests {
 
 	@Test
 	void contextLoads() {

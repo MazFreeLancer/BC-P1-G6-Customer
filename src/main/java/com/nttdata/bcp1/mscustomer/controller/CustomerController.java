@@ -1,8 +1,7 @@
-package com.nttdata.BootCampProyectoIG6.controller;
+package com.nttdata.bcp1.mscustomer.controller;
 
-import com.nttdata.BootCampProyectoIG6.model.Customer;
-import com.nttdata.BootCampProyectoIG6.model.CustomerType;
-import com.nttdata.BootCampProyectoIG6.service.CustomerService;
+import com.nttdata.bcp1.mscustomer.model.Customer;
+import com.nttdata.bcp1.mscustomer.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,8 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
-import javax.ws.rs.PathParam;
 
 @RestController
 @RequestMapping("/customer")

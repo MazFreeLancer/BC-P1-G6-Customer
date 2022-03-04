@@ -1,4 +1,4 @@
-package com.nttdata.BootCampProyectoIG6;
+package com.nttdata.bcp1.mscustomer;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -7,16 +7,13 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
-
-
 @SpringBootApplication
-public class BootCampProyectoIg6Application implements ApplicationRunner {
+public class MsCustomerApplication implements ApplicationRunner {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BootCampProyectoIg6Application.class, args);
+		SpringApplication.run(MsCustomerApplication.class, args);
 	}
-	private static final Logger logger = LogManager.getLogger(BootCampProyectoIg6Application.class);
+	private static final Logger logger = LogManager.getLogger(MsCustomerApplication.class);
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		logger.debug("Debug de la aplicación");

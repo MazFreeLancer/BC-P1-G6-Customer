@@ -1,7 +1,6 @@
-package com.nttdata.BootCampProyectoIG6.service;
+package com.nttdata.bcp1.mscustomer.service;
 
-import com.nttdata.BootCampProyectoIG6.model.Customer;
-import com.nttdata.BootCampProyectoIG6.model.CustomerType;
+import com.nttdata.bcp1.mscustomer.model.Customer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

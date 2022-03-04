@@ -1,0 +1,46 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: ms-customer
+  profiles:
+    active:
+      - dev #(2)
+  config:
+    import: optional:configserver:http://localhost:9010
+  #cloud:
+    #config:
+      #profile: qa
+
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: health, info, refresh, restart, env
+  endpoint:
+    health:
+      enabled: true
+    info:
+      enabled: true
+    refresh:
+      enabled: true
+    restart:
+      enabled: true
+    env:
+      enabled: true
+
+
+
+
+
+
+# CONFIGURACION PERSONAL
+#spring:
+#  application:
+#    name: ms-customer
+#  cloud:
+#    config:
+#      enabled: true
+#      uri: http://localhost:8082

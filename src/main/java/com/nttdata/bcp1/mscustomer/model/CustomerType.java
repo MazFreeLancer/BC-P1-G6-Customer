@@ -1,4 +1,4 @@
-package com.nttdata.BootCampProyectoIG6.model;
+package com.nttdata.bcp1.mscustomer.model;
 
 public enum CustomerType {
     PERSONAL,

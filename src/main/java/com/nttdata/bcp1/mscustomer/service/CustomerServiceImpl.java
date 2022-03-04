@@ -1,8 +1,7 @@
-package com.nttdata.BootCampProyectoIG6.service;
+package com.nttdata.bcp1.mscustomer.service;
 
-import com.nttdata.BootCampProyectoIG6.model.Customer;
-import com.nttdata.BootCampProyectoIG6.model.CustomerType;
-import com.nttdata.BootCampProyectoIG6.repository.CustomerRepository;
+import com.nttdata.bcp1.mscustomer.model.Customer;
+import com.nttdata.bcp1.mscustomer.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
