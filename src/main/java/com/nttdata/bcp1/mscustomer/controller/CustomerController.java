@@ -41,7 +41,8 @@ public class CustomerController {
     @ResponseStatus(HttpStatus.ACCEPTED)
     public ResponseEntity<Mono<Customer>> updateCust(@RequestBody Customer customer){
         Mono<Customer> customerMono = customerService.updateCust(customer);
-        return new ResponseEntity<Mono<Customer>>(customerMono, customerMono!=null? HttpStatus.OK : HttpStatus.NOT_FOUND);
+        return new ResponseEntity<Mono<Customer>>(customerMono,
+                customerMono!=null? HttpStatus.OK : HttpStatus.NOT_FOUND);
     }
 
     @DeleteMapping("/delete/{id}")
