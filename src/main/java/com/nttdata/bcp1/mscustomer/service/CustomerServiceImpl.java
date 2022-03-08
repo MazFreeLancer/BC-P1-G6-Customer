@@ -4,7 +4,9 @@ import com.nttdata.bcp1.mscustomer.model.Customer;
 import com.nttdata.bcp1.mscustomer.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -14,6 +16,10 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
     CustomerRepository customerRepository;
+
+    @Autowired
+    @Qualifier("wcLoadBalanced")
+    private WebClient.Builder webClientBuilder;
 
     @Override
     public Mono<Customer> createCust(Customer c) {
