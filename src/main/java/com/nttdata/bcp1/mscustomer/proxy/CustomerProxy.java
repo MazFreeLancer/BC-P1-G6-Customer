@@ -10,10 +10,10 @@ public class CustomerProxy {
     private final WebClient.Builder webClientBuilder = WebClient.builder();
 
     //get credits by id client
-    public Flux<Credit> getCredits(String idClient){
+    public Flux<Credit> getCredits(String idCustomer){
         return webClientBuilder.build()
                 .get()
-                .uri("http://localhost:9020/credit/allByClient/{id}", idClient)
+                .uri("http://localhost:9020/credit/allByCustomer/{id}", idCustomer)
                 .retrieve()
                 .bodyToFlux(Credit.class);
     }
