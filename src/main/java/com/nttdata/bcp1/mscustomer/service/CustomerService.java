@@ -5,9 +5,8 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface CustomerService {
-    Mono<Customer> createCust(Customer c);
-    Mono<Customer> findByCustId(String id);
-    Flux<Customer> findAllCust();
-    Mono<Customer> updateCust(Customer c);
-    Mono<Void> deleteCust(String id);
+    public Flux<Customer> findAll();
+    public Mono<Customer> findById(String id);
+    public Mono<Customer> save(Customer client);
+    public void delete(String id);
 }

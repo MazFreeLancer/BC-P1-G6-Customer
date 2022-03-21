@@ -16,7 +16,7 @@ public class Customer {
     @Id
     private String id;
     private String name;
-    private String docType;
-    private String docNumber;
-    private CustomerType customerType;
+    private String customerProfile;
+    private String customerType;
+
 }
