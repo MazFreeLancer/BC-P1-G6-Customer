@@ -11,7 +11,7 @@ public class Credit {
     private String typeCredit;
     private String accountNumber;
     private Double balance;
-    private Double credit;
+    private Double creditLine;
     private Double debt;
 
 }
