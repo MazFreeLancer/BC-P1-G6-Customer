@@ -19,5 +19,4 @@ public class ProjectConfig {
     public WebClient.Builder webClientBuilder() {
         return WebClient.builder();
     }
-
 }
