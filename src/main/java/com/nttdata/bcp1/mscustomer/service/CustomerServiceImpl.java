@@ -1,6 +1,5 @@
 package com.nttdata.bcp1.mscustomer.service;
 
-import com.nttdata.bcp1.mscustomer.MsCustomerApplication;
 import com.nttdata.bcp1.mscustomer.model.Credit;
 import com.nttdata.bcp1.mscustomer.model.Customer;
 import com.nttdata.bcp1.mscustomer.proxy.CustomerProxy;
@@ -9,9 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -21,7 +18,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class CustomerServiceImpl implements CustomerService {
-    private static final Logger logger = LogManager.getLogger(MsCustomerApplication.class);
+    private static final Logger logger = LogManager.getLogger(CustomerServiceImpl.class);
     @Autowired
     CustomerRepository customerRepository;
 
@@ -51,7 +48,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     //CLIENT UTIL METHODS
     public Mono<Customer> checkType(Customer customer){
-        List<String> types = new ArrayList<String>();
+        List<String> types = new ArrayList<>();
         types.add("PERSONAL");
         types.add("BUSINESS");
 
@@ -61,7 +58,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     public Mono<Customer> checkProfile(Customer customer){
-        logger.info("CustomerProfile: "+customer.getCustomerProfile());
+        logger.info(String.format("CustomerProfile : %s", customer.getCustomerProfile()));
         switch (customer.getCustomerProfile()) {
             case "VIP":
                 if(customer.getCustomerType().equals("BUSINESS")) return Mono.error(() -> new IllegalArgumentException("Invalid Client profile, business client can't have VIP profile"));
