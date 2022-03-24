@@ -38,7 +38,6 @@ public class CustomerServiceImpl implements CustomerService {
     public Mono<Customer> save(Customer customer) {
         return checkType(customer).flatMap(this::checkProfile)
                 .flatMap(customerRepository::save);
-
     }
 
     @Override
@@ -75,11 +74,11 @@ public class CustomerServiceImpl implements CustomerService {
 
     public Mono<Customer> checkIfCreditCard(Customer customer){
         return customerProxy.getCredits(customer.getId())
-                .filter(resp->resp.getTypeCredit().contains("credit card"))
+                .filter(resp->resp.getTypeCredit().contains("CREDIT CARD"))
                 .next()
                 .switchIfEmpty(Mono.just(new Credit()))
                 .flatMap(resp->{
-                    if(resp.getId()!=null && resp.getTypeCredit().contains("credit card")) return Mono.just(customer);
+                    if(resp.getId()!=null && resp.getTypeCredit().contains("CREDIT CARD")) return Mono.just(customer);
                     return Mono.error(() -> new IllegalArgumentException("Invalid Client profile, client doesn't have a credit card"));
                 });
     }
